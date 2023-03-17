@@ -11,7 +11,7 @@ public class DivisionInLooping
 		while(true)
 		{
 			System.out.println("Enter numerator");
-			String numerator=scanner.next();
+			String numerator = scanner.next();
 			try
 			{
 				if(numerator.equals("q"))
