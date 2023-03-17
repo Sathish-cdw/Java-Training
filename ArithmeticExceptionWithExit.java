@@ -25,7 +25,7 @@ public class ArithmeticExceptionWithExit
 	}
 	public static void main(String[] args)
 	{
-		ArithmeticExceptionWithReturn s = new  ArithmeticExceptionWithReturn();
-		s.mth1();
+		ArithmeticExceptionWithReturn arithmeticExceptionWithReturn = new  ArithmeticExceptionWithReturn();
+		arithmeticExceptionWithReturn.mth1();
 	}
 }
