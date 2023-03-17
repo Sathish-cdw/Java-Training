@@ -16,12 +16,12 @@ public class OwnExceptionWithOutCatch
 	 int a;
 	 public OwnExceptionWithOutCatch(int a)
 	 {
-		this.a=a;
+		this.a = a;
 	}
 
 	public static void main(String[] args) throws Exception
 	{
-		int a=1;
+		int a = 1;
 		OwnExceptionWithOutCatch checkValue = new OwnExceptionWithOutCatch(a);
 		checkValue.validate();
 	}
