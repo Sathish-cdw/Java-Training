@@ -23,8 +23,8 @@ public class NumbersRange
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("enter a number");
 		int a = scanner.nextInt();
-		NumbersRange concat = new NumbersRange(a);
-		concat.validate();
+		NumbersRange numbersRange = new NumbersRange(a);
+		numbersRange.validate();
 	}
 	private void validate()throws Exception
 	{
