@@ -5,16 +5,9 @@ import java.io.IOException;
 
 public class ThrowAnException
 {
-	public static void main(String[] args)throws Exception
+	public static void main(String[] args)throws FileNotFoundException
 	{
-		CustomException.customException();
+		FileInputStream fileRead = new FileInputStream("dat.txt");
 	}
 }
 
-class CustomException
-{
-	public static void customException() throws Exception
-	{
-		FileInputStream file = new FileInputStream("dat.txt");
-	}
-}
