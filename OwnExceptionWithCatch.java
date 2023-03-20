@@ -19,8 +19,8 @@ public class OwnExceptionWithCatch
 	public static void main(String[] args) 
 	{
 		int a = 8;
-		OwnExceptionWithCatch checkValue = new OwnExceptionWithCatch(a);
-		checkValue.validate();
+		OwnExceptionWithCatch ownExceptionWithCatch = new OwnExceptionWithCatch(a);
+		ownExceptionWithCatch.validate();
 	}
 	public void validate() 
 	{
