@@ -51,7 +51,7 @@ class DynamicStack implements Stack
     {
         stack = new int[size];
         top = -1;
-        this.x=x;
+        this.x = x;
     }
 
     public void push(int value)
@@ -82,34 +82,33 @@ public class StackInterface
 {
     public static void main(String[] args) 
     {
-    	  System.out.println("Enter the size of the dynamic array to be added");
-          Scanner scanner=new Scanner(System.in);
-          int x;
-          x=scanner.nextInt();
-        FixedStack fs = new FixedStack(6);
-        DynamicStack ds = new DynamicStack(5,x);
-      
-
+        System.out.println("Enter the size of the dynamic array to be added");
+        Scanner scanner=new Scanner(System.in);
+        int x;
+        x=scanner.nextInt();
+        FixedStack fixedStack = new FixedStack(6);
+        DynamicStack dynamicStack = new DynamicStack(5,x);
+     
         for (int i = 1; i <= 6; i++) 
         {
-            fs.push(i);
+            fixedStack.push(i);
         }
         System.out.println("Elements in fixed stack:");
         for (int i = 0; i < 6; i++) 
         {
-            System.out.print(" "+fs.pop());
+            System.out.print(" "+fixedStack.pop());
         }
 
         System.out.println();
 
         for (int i = 1; i <= 10; i++) 
         {
-            ds.push(i);
+            dynamicStack.push(i);
         }
         System.out.println("Elements in dynamic stack:");
         for (int i = 0; i < 10; i++)
         {
-            System.out.print(" "+ds.pop());
+            System.out.print(" "+dynamicStack.pop());
         }
         scanner.close();
     }
