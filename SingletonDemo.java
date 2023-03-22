@@ -9,13 +9,15 @@ class Singleton
     public static Singleton createInstance() 
     {
         if(singleton == null)
-            singleton = new Singleton();
+        {
+           singleton = new Singleton();
+           System.out.println("singletion new class is created ");
+        }
+        else
+        {
+        	System.out.println("singletion class is already exist ");
+        }
         return singleton;
-    }
-    
-    public void testPrint() 
-    {
-        System.out.println("In singleton class.");
     }
 }
 
@@ -24,6 +26,5 @@ public class SingletonDemo
     public static void main(String[] args)
     {
         Singleton singleton = Singleton.createInstance();
-        singleton.testPrint();
     }
 }
