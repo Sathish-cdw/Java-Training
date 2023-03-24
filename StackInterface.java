@@ -83,11 +83,11 @@ public class StackInterface
     public static void main(String[] args) 
     {
         System.out.println("Enter the size of the dynamic array to be added");
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int x;
-        x=scanner.nextInt();
+        x = scanner.nextInt();
         FixedStack fixedStack = new FixedStack(6);
-        DynamicStack dynamicStack = new DynamicStack(5,x);
+        DynamicStack dynamicStack = new DynamicStack(5, x);
      
         for (int i = 1; i <= 6; i++) 
         {
@@ -96,7 +96,7 @@ public class StackInterface
         System.out.println("Elements in fixed stack:");
         for (int i = 0; i < 6; i++) 
         {
-            System.out.print(" "+fixedStack.pop());
+            System.out.print(" " + fixedStack.pop());
         }
 
         System.out.println();
@@ -108,7 +108,7 @@ public class StackInterface
         System.out.println("Elements in dynamic stack:");
         for (int i = 0; i < 10; i++)
         {
-            System.out.print(" "+dynamicStack.pop());
+            System.out.print(" " + dynamicStack.pop());
         }
         scanner.close();
     }
