@@ -2,7 +2,7 @@ package Pattern;
 
 public class BuilderPattern {
 	public static void main(String[] args) {
-		Computer computer = new Computer.BuildComputer().setMonitor(new Monitor()).setKeyBoard(null).build();
+		Computer computer = new Computer.BuildComputer().setMonitor(new Monitor()).setKeyBoard(new KeyBoard()).build();
 		System.out.println(computer);
 	}
 }
