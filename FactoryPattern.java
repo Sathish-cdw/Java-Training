@@ -16,6 +16,7 @@ public class FactoryPattern {
 
 class ShapeFactory {
 	public Shape getShape(String shapeType) {
+		//checking which shape will match 
 		if (shapeType.equalsIgnoreCase("rectangle")) {
 			return new Rectangle();
 		} else if (shapeType.equalsIgnoreCase("square")) {
@@ -27,11 +28,11 @@ class ShapeFactory {
 		}
 	}
 }
-
+//shape abstract
 abstract class Shape {
 	abstract void draw();
 }
-
+//all class extends abstract class shape
 class Rectangle extends Shape {
 	void draw() {
 		System.out.println("Rectangle is drawn");
