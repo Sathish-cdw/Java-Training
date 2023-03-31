@@ -1,28 +1,27 @@
 package Pattern;
 
 public class SingletonPattern {
-	public static void main(String[] args) throws CloneNotSupportedException {
+	   public static void main(String[] args) {
 
-		Sheep mSheep = new Sheep();
-		mSheep.name = "I am mother";
-		Sheep cSheep = mSheep;
-		cSheep.name = "I am child";
-
-		System.out.println(mSheep.name);
-		System.out.println(cSheep.name);
-
-	}
-}
-
-class Sheep implements Cloneable {
-	String name;
-
-	public Sheep() {
-		System.out.println("sheep object created....");
+	      //Get the only object available
+	      SingleObject object = SingleObject.getInstance();
+	      //show the message
+	      object.showMessage();  
+	   }
 	}
 
-	public Sheep createClone() throws CloneNotSupportedException {
-		return (Sheep) super.clone();
-	}
+ class SingleObject {
+	   //create an object of SingleObject
+	   private static SingleObject instance = new SingleObject();
 
-}
+	   //private constructor
+	   private SingleObject(){}
+
+	   //Get the object 
+	   public static SingleObject getInstance(){
+	      return instance;
+	   }
+	   public void showMessage(){
+	      System.out.println("Hello Welcome to patterns!");
+	   }
+	}
