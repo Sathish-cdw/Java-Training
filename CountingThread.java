@@ -19,7 +19,7 @@ class ThreadClass
 	public void thread()
 	{
 		int i = 0;
-		while(i<=100)
+		while(i <= 100)
 		{
 			System.out.println(++i);
 			if(i % 10 == 0)
