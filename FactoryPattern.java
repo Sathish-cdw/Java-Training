@@ -22,8 +22,9 @@ class ShapeFactory {
 			return new Square();
 		} else if (shapeType.equalsIgnoreCase("triangle")) {
 			return new Triangle();
+		} else{
+			return new NotInShape();
 		}
-		return null;
 	}
 }
 
@@ -47,5 +48,10 @@ class Square extends Shape {
 class Triangle extends Shape {
 	void draw() {
 		System.out.println("Triangle is drawn");
+	}
+}
+class NotInShape extends Shape {
+	void draw() {
+		System.out.println("The shape you are trying to draw is not available");
 	}
 }
