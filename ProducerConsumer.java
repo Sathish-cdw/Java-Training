@@ -41,12 +41,19 @@ public class ProducerConsumer
 class Inventory
 {	
 	boolean flag ;
-	int value=0;
+	int value = 0;
 	synchronized public void consumer() throws InterruptedException
 	{
 		if(!flag)
 		{
-			try {wait();}catch(Exception e) {}
+			try 
+			{
+				wait();
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
 		}
 		System.out.println("The consumer buyed the product ");
 		flag = false;
@@ -56,10 +63,17 @@ class Inventory
 	 {
 		if(flag)
 		{
-			try {wait();}catch(Exception e) {}
+			try 
+			{
+				wait();
+			}
+			catch(Exception e) 
+			{
+				e.printStackTrace();
+			}
 		}
 		System.out.println("The producer produced the product ");
-		flag =true;
+		flag = true;
 		notify();	
 	}
 }
