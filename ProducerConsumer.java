@@ -10,13 +10,15 @@ public class ProducerConsumer
 	{
 		ExecutorService es = Executors.newFixedThreadPool(2);
 		Inventory inventory = new Inventory();
-		es.execute(()->{
-			for(int i=0;i<5;i++)
+		es.execute(()->
+		{
+			for(int i = 0 ; i < 5 ; i++)
 			{
 				try {
 					inventory.producer();
 				} 
-				catch (InterruptedException e) {
+				catch (InterruptedException e) 
+				{
 					e.printStackTrace();
 				}
 			}
@@ -24,12 +26,13 @@ public class ProducerConsumer
 		
 		es.execute(()->
 		{
-			for(int i=0;i<5;i++)
+			for(int i = 0 ; i < 5 ; i++)
 			{
 				try {
 					inventory.consumer();
 				} 
-				catch (InterruptedException e) {
+				catch (InterruptedException e)
+				{
 					e.printStackTrace();
 				}
 			}
