@@ -6,13 +6,13 @@ import java.time.format.DateTimeFormatter;
 public class DigitalClock {
 	public static void main(String[] args) {
 		
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");  
-		LocalDateTime now1 = LocalDateTime.now();  
-		String x=dtf.format(now1);
-		String[] x1 = x.split(":");
-		int hour = Integer.parseInt(x1[0].strip());
-		int minute = Integer.parseInt(x1[1].strip());
-		int second = Integer.parseInt(x1[2].strip());
+		DateTimeFormatter datetTimeFormat = DateTimeFormatter.ofPattern("HH:mm:ss");  
+		LocalDateTime localTimenow = LocalDateTime.now();  
+		String dateFormat=datetTimeFormat.format(localTimenow);
+		String[] dateFormatSplit = dateFormat.split(":");
+		int hour = Integer.parseInt(dateFormatSplit[0].strip());
+		int minute = Integer.parseInt(dateFormatSplit[1].strip());
+		int second = Integer.parseInt(dateFormatSplit[2].strip());
 		
 		while(true)
 		{
@@ -34,7 +34,14 @@ public class DigitalClock {
 			 hour = 0;
 		 }
 		 second++;
-		 try {Thread.sleep(1000);}catch(Exception e){}
+		 try 
+		 {
+		 	Thread.sleep(1000);
+		 }
+		 catch(Exception e)
+		 {
+		 	e.printstackTrace();
+		 }
 		 
 		}
 	}
