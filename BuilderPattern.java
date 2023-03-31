@@ -11,7 +11,7 @@ class Computer
 {
 	Monitor mon;
 	KeyBoard KB;
-	
+	// passing arguments in constructor
 	public  Computer(Monitor mon ,KeyBoard KB)
 	{
 		this.mon = mon;
@@ -21,17 +21,17 @@ class Computer
 	static class BuildComputer
 	{
 		Monitor mon ; KeyBoard KB;
-		
+		//set for all arguments passed in arguments
 		public BuildComputer setMonitor(Monitor mon)
 		{
 			this.mon=mon;
-			return this;
+			return this;//this will return value;
 		}
 		
 		public BuildComputer setKeyBoard(KeyBoard KB)
 		{
 			this.KB = KB;
-			return this;
+			return this;//this will return value;
 		}
 		
 		public Computer build()
@@ -40,6 +40,7 @@ class Computer
 		}
 		
 	}
+	//to string for return the values
 	public String toString()
 	{
 		return "Computer [Monitor = " + mon + ", Keyboard = " + KB + " ]"; 
