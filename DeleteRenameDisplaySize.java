@@ -5,36 +5,30 @@ import java.nio.file.NoSuchFileException;
 
 public class DeleteRenameDisplaySize {
 	public static void main(String[] args) {
-		File file1 = new File("sample.txt");
-		File file2 = new File("sample2.txt");
+		File fileDelete = new File("sample.txt");
+		File fileRename = new File("sample2.txt");
 		File rename = new File("ChangedName.txt");
-		File file3 = new File("length.txt");
-		if(file1.exists())
-		{
-			try
-			{
-				if(file1
-						.delete())
-				{
+		File fileLength= new File("length.txt");
+		if(fileDelete.exists()){
+			try{
+				//deleting file if exist
+				if(fileDelete.delete()){
 					System.out.println("file deleted");
 				}
 			}
-			catch(Exception e)
-			{
+			catch(Exception e){
 				System.out.println("no directory is no correct");
 			}
 		}
-		else
-		{
+		else{
+			//if file no exist
 			System.out.println("no file present");
 		}
-	
-	
-		if(file2.renameTo(rename))
-		{
+		//renaming the file 
+		if(fileRename.renameTo(rename)){
 			System.out.println("file name changed sucessfully");
 		}
-	
-		System.out.println("the length of file is "+file3.length());
+		//printing lenght of file
+		System.out.println("The length of file is "+fileLength.length());
 }
 }
