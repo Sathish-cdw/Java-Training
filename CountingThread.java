@@ -18,16 +18,15 @@ class ThreadClass
 {
 	public void thread()
 	{
-		int i=0;
+		int i = 0;
 		while(i<=100)
 		{
 			System.out.println(++i);
-			if(i%10==0)
+			if(i % 10 == 0)
 			{
-				System.out.println("you count is currently "+i);
+				System.out.println("you count is currently " + i);
 			}
 			try{Thread.sleep(1000);}catch(Exception e){}
-			
 		}
 	}
 }
