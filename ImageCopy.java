@@ -5,19 +5,26 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ImageCopy {
-
 	public static void main(String[] args) throws IOException {
-		
-		System.out.println("hello");
-		
-        
-       FileInputStream in=new FileInputStream("/Users/sathish_s/Documents/images.jpeg");
-       FileOutputStream out=new FileOutputStream("copiedImage.jpeg");
+		//reading file from location
+        	FileInputStream readFile=new FileInputStream("/Users/sathish_s/Documents/images.jpeg");
+		//copying the image to other location
+       		FileOutputStream writeFile=new FileOutputStream("copiedImage.jpeg");
+		try{
 		int i;
-		while((i=in.read())!=-1) {
-			out.write(i);
+		while((i=readFile.read())!=-1) {
+			//writing the file to destination file
+			writeFile.write(i);
 		}
-		in.close();
-		out.close();
+			System.out.println("write sucessfully");
+		}
+		catch(Exception e){
+        		e.printStackTrace();
+        	}
+		finally{
+			//finally closing all the files
+			readFile.close();
+			writeFile.close();
+		}
 	}
 }
