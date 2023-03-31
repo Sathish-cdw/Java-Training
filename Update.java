@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Update {
+   //To establish connection with mysql details
    static final String DB_URL = "jdbc:mysql://localhost/javatask";
    static final String USER = "root";
    static final String PASS = "Sathish@2000";
@@ -15,20 +16,20 @@ public class Update {
    public static void main(String[] args) {
       // Open a connection
       try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-         Statement stmt = conn.createStatement();
+         Statement statement = conn.createStatement();
       ) {		      
-         String sql = "UPDATE Registration " +
+         String query = "UPDATE Registration " +
             "SET age = 30 WHERE id in (100, 101)";
-         stmt.executeUpdate(sql);
-         ResultSet rs = stmt.executeQuery(QUERY);
+         statement.executeUpdate(query);
+         ResultSet resultQuery = statement.executeQuery(QUERY);
          while(rs.next()){
-            //Display values
-            System.out.print("ID: " + rs.getInt("id"));
-            System.out.print(", Age: " + rs.getInt("age"));
-            System.out.print(", First: " + rs.getString("first"));
-            System.out.println(", Last: " + rs.getString("last"));
+            //Display values in the table after updating
+            System.out.print("ID: " + resultQuery.getInt("id"));
+            System.out.print(", Age: " + resultQuery.getInt("age"));
+            System.out.print(", First: " + resultQuery.getString("first"));
+            System.out.println(", Last: " + resultQuery.getString("last"));
          }
-         rs.close();
+         resultQuery.close();
       } catch (SQLException e) {
          e.printStackTrace();
       } 
