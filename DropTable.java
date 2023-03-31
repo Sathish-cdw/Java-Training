@@ -16,8 +16,8 @@ public class DropTable {
       try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
          Statement stmt = conn.createStatement();
       ) {		      
-         String sql = "DROP TABLE REGISTRATION";
-         stmt.executeUpdate(sql);
+         String query = "DROP TABLE REGISTRATION";
+         stmt.executeUpdate(query);
          System.out.println("Table deleted in given database...");   	  
       } catch (SQLException e) {
          e.printStackTrace();
