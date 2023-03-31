@@ -4,7 +4,7 @@ package Pattern;
 interface Command {
 	public void execute();
 }
-
+// light and command classes
 class Light {
 	public void on() {
 		System.out.println("Light is on");
@@ -14,7 +14,7 @@ class Light {
 		System.out.println("Light is off");
 	}
 }
-
+//command for light on 
 class LightOnCommand implements Command {
 	Light light;
 
@@ -26,7 +26,7 @@ class LightOnCommand implements Command {
 		light.on();
 	}
 }
-
+//command for light off
 class LightOffCommand implements Command {
 	Light light;
 
@@ -65,7 +65,7 @@ class Stereo {
 		System.out.println("Stereo volume set" + " to " + volume);
 	}
 }
-
+//command for stereo off
 class StereoOffCommand implements Command {
 	Stereo stereo;
 
@@ -77,7 +77,7 @@ class StereoOffCommand implements Command {
 		stereo.off();
 	}
 }
-
+//command for stereo on
 class StereoOnWithCDCommand implements Command {
 	Stereo stereo;
 
@@ -109,14 +109,17 @@ class SimpleRemoteControl {
 
 public class CommandPattern {
 	public static void main(String[] args) {
+		//creating objects 
 		SimpleRemoteControl remote = new SimpleRemoteControl();
 		Light light = new Light();
 		Stereo stereo = new Stereo();
-
+		//passing instruction light on command
 		remote.setCommand(new LightOnCommand(light));
 		remote.buttonWasPressed();
+		//passing instruction to stereo on command 
 		remote.setCommand(new StereoOnWithCDCommand(stereo));
 		remote.buttonWasPressed();
+		//passing instruction to stereo off command
 		remote.setCommand(new StereoOffCommand(stereo));
 		remote.buttonWasPressed();
 	}
