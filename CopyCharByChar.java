@@ -5,22 +5,18 @@ import java.io.FileReader;
 import java.io.FileWriter;
 public class CopyCharByChar {
 	public static void main(String[] args) throws Exception{
-		
-		
-		FileReader in=new FileReader("data.txt");
-		
-		try (FileWriter out=new FileWriter("copy.txt")){
-		char c[]=new char[8];
+		FileReader readFile=new FileReader("data.txt");
+		try (FileWriter writeFile=new FileWriter("copy.txt")){
+		char character[]=new char[8];
 		int i=0;
-		while((i=in.read(c))!=-1) {
-			String s=new String(c,0,i);
-			out.write(s);
-			
+		while((i=readFile.read(c))!=-1) {
+			String string=new String(c,0,i);
+			WriteFile.write(string);
 		}
-		System.out.println("writed sucessfully");
+			System.out.println("writed sucessfully");
 		}
 		catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 	}
 }
