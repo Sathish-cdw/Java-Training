@@ -2,19 +2,18 @@ package Pattern;
 
 public class StrategyPattern {
 	public static void main(String[] args) {
-		NewBrush brush = new NewBrush();
-		brush.paint = new RedPaint();
-		System.out.println((brush.getPaint()));
-		brush.paint = new BluePaint();
-		System.out.println((brush.getPaint()));
+		PaintBrush paintBrush = new PaintBrush();
+		paintBrush.paintColor = new RedColorPaint();
+		System.out.println((paintBrush.getPaint()));
+		paintBrush.paintColor = new BlueColorPaint();
+		System.out.println((paintBrush.getPaint()));
 	}
 }
 
-class NewBrush {
-	Paintt paint;
-
+class PaintBrush {
+	Paintt paintColor;
 	public Paintt getPaint() {
-		return paint;
+		return paintColor;
 	}
 }
 
@@ -22,13 +21,13 @@ abstract class Paintt {
 	abstract void color();
 }
 
-class RedPaint extends Paintt {
+class RedColorPaint extends Paintt {
 	void color() {
 		System.out.println("red color");
 	}
 
 }
-class BluePaint extends Paintt {
+class BlueColorPaint extends Paintt {
 	void color() {
 		System.out.println("Blue color");
 	}
