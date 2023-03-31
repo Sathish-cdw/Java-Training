@@ -3,8 +3,10 @@ package MultiThread;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class CountingThread {
-	public static void main(String[] args) {
+public class CountingThread
+{
+	public static void main(String[] args)
+	{
 		ExecutorService es = Executors.newFixedThreadPool(1);
 		ThreadClass threadClass = new ThreadClass();
 		es.execute(()->
@@ -26,7 +28,14 @@ class ThreadClass
 			{
 				System.out.println("you count is currently " + i);
 			}
-			try{Thread.sleep(1000);}catch(Exception e){}
+			try
+			{
+				Thread.sleep(1000);
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
 		}
 	}
 }
